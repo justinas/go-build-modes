@@ -1,0 +1,4 @@
+math
+*.dylib
+*.a
+*.h
