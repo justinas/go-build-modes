@@ -11,5 +11,8 @@ dynamic: libmath.dylib
 static: libmath.a
 	cc libmath.a math.c -o math
 
+python: libmath.dylib
+	python3 mymath.py
+
 clean:
 	rm -f *.dylib *.a math
