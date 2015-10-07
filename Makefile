@@ -6,10 +6,10 @@ libmath.a: math.go
 	go build -buildmode=c-archive -o libmath.a math.go
 
 dynamic: libmath.dylib
-	cc -L. -lmath -o math math.c
+	cc math.c -L. -lmath -o math
 
 static: libmath.a
-	cc libmath.a math.c -o math
+	cc math.c libmath.a -lpthread -o math
 
 python: libmath.dylib
 	python3 mymath.py
