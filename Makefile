@@ -14,5 +14,8 @@ static: libmath.a
 python: libmath.dylib
 	python3 mymath.py
 
+rust: libmath.dylib
+	rustc math.rs -L. -o math
+
 clean:
 	rm -f *.dylib *.a math
